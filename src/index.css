@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #22222e #0a0a0f;
+  }
+  *::-webkit-scrollbar { width: 6px; }
+  *::-webkit-scrollbar-track { background: #0a0a0f; }
+  *::-webkit-scrollbar-thumb { background: #22222e; border-radius: 3px; }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.3);
+    color: #fff;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] { -moz-appearance: textfield; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-blue hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-150 active:scale-[0.97] disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-danger {
+    @apply bg-accent-red/20 hover:bg-accent-red/30 text-accent-red border border-accent-red/30 font-semibold px-4 py-2 rounded-lg transition-all duration-150 active:scale-[0.97] disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply bg-surface-200 hover:bg-surface-300 text-gray-200 font-medium px-4 py-2 rounded-lg transition-all duration-150 active:scale-[0.97];
+  }
+  .input-field {
+    @apply w-full bg-surface-100 border border-surface-300 rounded-lg px-3 py-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue/30 transition-colors;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-semibold uppercase tracking-wider;
+  }
+  .badge-open { @apply badge bg-accent-blue/20 text-accent-blue; }
+  .badge-closed { @apply badge bg-accent-yellow/20 text-accent-yellow; }
+  .badge-resolved { @apply badge bg-accent-green/20 text-accent-green; }
+  .badge-voided { @apply badge bg-gray-500/20 text-gray-400; }
+  .badge-active { @apply badge bg-accent-blue/20 text-accent-blue; }
+  .badge-won { @apply badge bg-accent-green/20 text-accent-green; }
+  .badge-lost { @apply badge bg-accent-red/20 text-accent-red; }
+  .badge-refunded { @apply badge bg-accent-yellow/20 text-accent-yellow; }
+  .badge-removed { @apply badge bg-gray-500/20 text-gray-400; }
+  .card {
+    @apply bg-surface-50 border border-surface-300 rounded-xl;
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 60px rgba(59, 130, 246, 0.05);
+  }
+}
